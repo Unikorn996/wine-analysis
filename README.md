@@ -8,16 +8,16 @@ A data-driven application that provides insights into the quality and characteri
 
 - Clone the repository:
 
->git clone https://github.com/Unikorn996/wine-analysis.git
+```git clone https://github.com/Unikorn996/wine-analysis.git```
 
 - Change the directory:
 
->cd your_directory
+```cd your_directory```
 
 - Install the required packages:
 
->pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 - Run the application:
 
->python app.py
+```python app.py```
