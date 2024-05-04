@@ -56,7 +56,18 @@ class WineQualityApp(tk.Tk):
         self.field_combobox = ttk.Combobox(
             self,
             width=27,
-            values=["alcohol", "residual sugar"],
+            values=["fixed acidity",
+                    "volatile acidity",
+                    "citric acid",
+                    "residual sugar",
+                    "chlorides",
+                    "free sulfur dioxide",
+                    "total sulfur dioxide",
+                    "density",
+                    "pH",
+                    "sulphates",
+                    "alcohol"
+                    ],
             textvariable=n,
         )
 
@@ -101,7 +112,7 @@ class WineQualityApp(tk.Tk):
         data = self.df.copy()
         grouped = data.groupby('type').mean()
         # Plotting bars for each type
-        bar_width = 0.35
+        bar_width = 0.30
         index = range(len(grouped))
         bars1 = self.ax.bar(index, grouped['quality'], bar_width, label='Quality')
         bars2 = self.ax.bar([i + bar_width for i in index], grouped[select_attr], bar_width,
@@ -111,7 +122,7 @@ class WineQualityApp(tk.Tk):
         # Setting labels and title
         self.ax.set_xlabel('Wine Type')
         self.ax.set_ylabel('Average Value')
-        self.ax.set_title('Average Alcohol and Residual Sugar by Wine Type')
+        # self.ax.set_title('Average Alcohol and Residual Sugar by Wine Type')
         self.ax.set_xticks([i + bar_width / 2 for i in index])
         self.ax.set_xticklabels(grouped.index)
         self.ax.legend()
